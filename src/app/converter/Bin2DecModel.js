@@ -1,11 +1,15 @@
 class Bin2DecModel{
     constructor(value='0'){
-        let onlyZeroOrOneNumbers_And_Upto8Digits = /^([0-1]{1,8}){1}$/.test(value);
+        let onlyZeroOrOneNumbers = /^([0-1]*)$/.test(value);
 
-        if(!onlyZeroOrOneNumbers_And_Upto8Digits){
-            throw new Error('The value informed must be digits 0 or 1 and must be the length up to 8');
+        if(!onlyZeroOrOneNumbers){
+            throw new Error('The value informed must be digits 0 or 1');
         }
 
+        let upTo8Digits = /^(\d{1,8}){1}$/.test(value);
+        if(!upTo8Digits){
+            throw new Error('The value informed must be the length up to 8');
+        }
         this._input = value;  
     }
 
