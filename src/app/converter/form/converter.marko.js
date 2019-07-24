@@ -29,10 +29,10 @@ function render(input, out, __component, component, state) {
       "</div>");
   }
 
-  out.w("<form action=\"/convert\" method=\"POST\"><div><label for=\"binarynumber\">Binary Number: </label><input alt=\"Binary Number\" type=\"number\" name=\"binarynumber\" id=\"binarynumber\" required autofocus><input type=\"submit\" value=\"Compile!\"></div>");
+  out.w("<form action=\"/convert\" method=\"POST\"><div class=\"binary-input\"><label for=\"binary\">Binary: </label><input alt=\"Binary\" type=\"number\" name=\"binary\" id=\"binary\" required autofocus><input class=\"button-submit\" type=\"submit\" value=\"Compile!\"></div>");
 
   if (data.converter.output != null) {
-    out.w("<div id=\"decimal-number\"><label for=\"result\">Result: </label><input type=\"text\" id=\"result\" readonly" +
+    out.w("<div id=\"decimal-number\" class=\"decimal-response\"><label for=\"decimal\">Decimal: </label><input type=\"text\" id=\"decimal\" readonly" +
       marko_attr("value", "" + data.converter.output) +
       "></div>");
   }

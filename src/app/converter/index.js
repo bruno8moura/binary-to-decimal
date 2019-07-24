@@ -12,7 +12,7 @@ converter.toDecimal = function(req, res){
     let message;
     let bin2DecModel;
     try {
-        bin2DecModel = new Bin2DecModel(converterDTO.binarynumber);
+        bin2DecModel = new Bin2DecModel(converterDTO.binary);
         message = 'Converted!';
     } catch (error) {
         message = error;
