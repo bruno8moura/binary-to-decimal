@@ -13,7 +13,7 @@
             <if(data.converter.message)>
                 <div class="user-message-notification" id="messageView">${data.converter.message}</div>
             </if>
-            <form action="/convert" method="POST">
+            <form action="/binary-to-decimal/convert" method="POST">
                 <div class="binary-input">
                     <label for="binary">Binary: </label>
                     <input alt="Binary" type="number" name="binary" id="binary" required autofocus>

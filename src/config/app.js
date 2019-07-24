@@ -10,7 +10,7 @@ app.use(bodyParser.urlencoded({extended:true}));
 //pay atention the absolut path!
 app.use('/static', express.static('src/public'));
 
-const routes = require('../app/routes/routes');
+const routes = require('../app/routes');
 routes(app);
 
 module.exports = app;
