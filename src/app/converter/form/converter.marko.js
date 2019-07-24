@@ -17,14 +17,14 @@ var marko_template = module.exports = require("marko/src/html").t(__filename),
 function render(input, out, __component, component, state) {
   var data = input;
 
-  out.w("<!DOCTYPE html><html><head><meta charset=\"UTF-8\"><title>Binary to Decimal</title></head><body>");
+  out.w("<!DOCTYPE html><html><head><meta charset=\"UTF-8\"><link rel=\"shortcut icon\" href=\"/static/images/favicon.png\" type=\"image/x-icon\"><link rel=\"stylesheet\" href=\"/static/css/reset.css\"><link rel=\"stylesheet\" href=\"/static/css/principal.css\"><title>Binary to Decimal</title></head><body>");
 
   component_globals_tag({}, out);
 
-  out.w("<main>");
+  out.w("<h1 class=\"main-title\">Convert Binary to Decimal</h1><main class=\"main-content\">");
 
   if (data.converter.message) {
-    out.w("<div id=\"messageView\">" +
+    out.w("<div class=\"user-message-notification\" id=\"messageView\">" +
       marko_escapeXml(data.converter.message) +
       "</div>");
   }
@@ -37,13 +37,13 @@ function render(input, out, __component, component, state) {
       "></div>");
   }
 
-  out.w("</form></main> ");
+  out.w("</form></main> <footer class=\"page-footer\">Bruno Moura 2019&COPY;</footer>");
 
   init_components_tag({}, out);
 
-  await_reorderer_tag({}, out, __component, "15");
+  await_reorderer_tag({}, out, __component, "20");
 
-  out.w("</body><footer>Bruno Moura 2019&COPY;</footer><script>\n        function grantMaxLength(element){\n            if(8 < element.value.length){\n                element.value = element.value.substring(0, 7);\n            }\n        }\n    </script></html>");
+  out.w("</body></html>");
 }
 
 marko_template._ = marko_renderer(render, {

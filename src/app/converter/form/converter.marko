@@ -2,37 +2,33 @@
 <html>
     <head>
         <meta charset="UTF-8">
+        <link rel="shortcut icon" href="/static/images/favicon.png" type="image/x-icon">
+        <link rel="stylesheet" href="/static/css/reset.css">
+        <link rel="stylesheet" href="/static/css/principal.css">
         <title>Binary to Decimal</title>
     </head>
     <body>
-        <main>
+        <h1 class="main-title">Convert Binary to Decimal</h1>
+        <main class="main-content">
             <if(data.converter.message)>
-                <div id="messageView">${data.converter.message}</div>
+                <div class="user-message-notification" id="messageView">${data.converter.message}</div>
             </if>
             <form action="/convert" method="POST">
-                <div>
+                <div class="binary-input">
                     <label for="binarynumber">Binary Number: </label>
                     <input alt="Binary Number" type="number" name="binarynumber" id="binarynumber" required autofocus>
                     <input type="submit" value="Compile!">
                 </div>
                 <if(data.converter.output != null)>
-                    <div id="decimal-number">
+                    <div id="decimal-number" class="decimal-response">
                         <label for="result">Result: </label>
                         <input type="text" id="result" readonly value=`${data.converter.output}`>
                     </div>
                 </if>
             </form>
         </main>        
+        <footer class="page-footer">
+            Bruno Moura 2019&COPY;
+        </footer>
     </body>
-    <footer>
-        Bruno Moura 2019&COPY;
-    </footer>
-
-    <script>
-        function grantMaxLength(element){
-            if(8 < element.value.length){
-                element.value = element.value.substring(0, 7);
-            }
-        }
-    </script>
 </html>

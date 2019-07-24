@@ -1,0 +1,58 @@
+html {
+    font-family: "Open Sans Condensed", "Arial", sans-serif;
+}
+
+.main-title {
+    text-align: center;
+    padding: 25px;
+    font-size: 40px;
+    background-color: darkcyan;
+    color: aliceblue;
+}
+
+.user-message-notification {
+    padding: 20px;
+    background-color: cyan;
+    border-radius: 25px;
+    border-color: black;
+    text-align: center;
+    text-transform: uppercase;
+    animation:fading 4s;
+    opacity: 0;
+}
+
+@keyframes fading{
+    0% {
+        opacity: 0;
+    }
+    16% {
+       opacity: 1;
+    }
+    84% {
+       opacity: 1;
+    }
+    100% {
+       opacity: 0;
+    }
+    
+}
+
+.main-content {
+    padding: 50px;
+}
+
+.decimal-response {
+    padding-top: 20px;
+}
+
+.page-footer {
+    width: 100%;
+    bottom: 0;
+    position: fixed;
+    text-align: center;
+    padding: 20px;
+    background-color: black;
+    color: aliceblue;
+    font-size: 20px;
+}
+

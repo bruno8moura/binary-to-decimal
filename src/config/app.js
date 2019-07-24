@@ -7,6 +7,9 @@ const app = express();
 const bodyParser = require('body-parser');
 app.use(bodyParser.urlencoded({extended:true}));
 
+//pay atention the absolut path!
+app.use('/static', express.static('src/public'));
+
 const routes = require('../app/routes/routes');
 routes(app);
 
