@@ -2,6 +2,8 @@ html {
     font-family: "Open Sans Condensed", "Arial", sans-serif;
 }
 
+
+
 .main-title {
     text-align: center;
     padding: 25px;
@@ -13,11 +15,16 @@ html {
 .user-message-notification {
     padding: 20px;
     background-color: cyan;
-    border-radius: 25px;
+    border-radius: 20px;
     border-color: black;
+    margin: 20px;
     text-align: center;
     text-transform: uppercase;
-    animation:fading 4s;
+    
+}
+
+.show-and-hiding{
+    animation:fading 5s;
     opacity: 0;
 }
 
@@ -39,10 +46,11 @@ html {
 
 .main-content {
     padding: 50px;
+    text-align: center;
 }
 
-.decimal-response {
-    padding-top: 20px;
+.decimal-response {    
+    font-size: 70px; 
 }
 
 .page-footer {

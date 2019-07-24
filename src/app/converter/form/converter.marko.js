@@ -10,7 +10,6 @@ var marko_template = module.exports = require("marko/src/html").t(__filename),
     marko_loadTag = marko_helpers.t,
     component_globals_tag = marko_loadTag(require("marko/src/core-tags/components/component-globals-tag")),
     marko_escapeXml = marko_helpers.x,
-    marko_attr = marko_helpers.a,
     init_components_tag = marko_loadTag(require("marko/src/core-tags/components/init-components-tag")),
     await_reorderer_tag = marko_loadTag(require("marko/src/core-tags/core/await/reorderer-renderer"));
 
@@ -21,20 +20,14 @@ function render(input, out, __component, component, state) {
 
   component_globals_tag({}, out);
 
-  out.w("<h1 class=\"main-title\">Convert Binary to Decimal</h1><main class=\"main-content\">");
-
-  if (data.converter.message) {
-    out.w("<div class=\"user-message-notification\" id=\"messageView\">" +
-      marko_escapeXml(data.converter.message) +
-      "</div>");
-  }
-
-  out.w("<form action=\"/binary-to-decimal/convert\" method=\"POST\"><div class=\"binary-input\"><label for=\"binary\">Binary: </label><input alt=\"Binary\" type=\"number\" name=\"binary\" id=\"binary\" required autofocus><input class=\"button-submit\" type=\"submit\" value=\"Compile!\"></div>");
+  out.w("<h1 class=\"main-title\">Convert Binary to Decimal</h1><main class=\"main-content\"><form action=\"/binary-to-decimal/convert\" method=\"POST\"><div class=\"binary-input\"><label for=\"binary\">Binary: </label><input alt=\"Binary\" type=\"number\" name=\"binary\" id=\"binary\" required autofocus><input class=\"button-submit\" type=\"submit\" value=\"Compile!\"></div>");
 
   if (data.converter.output != null) {
-    out.w("<div id=\"decimal-number\" class=\"decimal-response\"><label for=\"decimal\">Decimal: </label><input type=\"text\" id=\"decimal\" readonly" +
-      marko_attr("value", "" + data.converter.output) +
-      "></div>");
+    out.w("<div class=\"user-message-notification show-and-hiding\" id=\"messageView\">" +
+      marko_escapeXml(data.converter.message) +
+      "</div><div class=\"decimal-response show-and-hiding\" id=\"decimal-number\"><p><strong>" +
+      marko_escapeXml(data.converter.output) +
+      "</strong></p></div>");
   }
 
   out.w("</form></main> <footer class=\"page-footer\">Bruno Moura 2019&COPY;</footer>");
