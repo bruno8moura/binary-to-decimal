@@ -22,7 +22,7 @@ function render(input, out, __component, component, state) {
 
   out.w("<h1 class=\"main-title\">Convert Binary to Decimal</h1><main class=\"main-content\"><form action=\"/binary-to-decimal/convert\" method=\"POST\"><div class=\"binary-input\"><label for=\"binary\">Binary: </label><input alt=\"Binary\" type=\"number\" name=\"binary\" id=\"binary\" required autofocus><input class=\"button-submit\" type=\"submit\" value=\"Compile!\"></div>");
 
-  if (data.converter.output != null) {
+  if (data.converter.message) {
     out.w("<div class=\"user-message-notification show-and-hiding\" id=\"messageView\">" +
       marko_escapeXml(data.converter.message) +
       "</div><div class=\"decimal-response show-and-hiding\" id=\"decimal-number\"><p><strong>" +

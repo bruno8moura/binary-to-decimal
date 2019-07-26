@@ -17,7 +17,7 @@
                     <input alt="Binary" type="number" name="binary" id="binary" required autofocus>
                     <input class="button-submit" type="submit" value="Compile!">
                 </div>
-                <if(data.converter.output != null)>
+                <if(data.converter.message)>
     
                     <div class="user-message-notification show-and-hiding" id="messageView">${data.converter.message}</div>
     
