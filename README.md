@@ -31,7 +31,7 @@ $ npm install
 ### Running application
 
 ```
-$ node server.js
+$ node server.js //or npm start
 ```
 
 ## Build with
